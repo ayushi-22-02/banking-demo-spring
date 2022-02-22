@@ -3,6 +3,7 @@ package org.example.app;
 import org.example.model.Customer;
 import org.example.repository.CustomerRepositoryDB;
 import org.example.repository.CustomerRepositoryStub;
+import org.example.service.CustomerService;
 import org.example.service.DefaultCustomerService;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public class Application {
         CustomerRepositoryDB dbRepository =new CustomerRepositoryDB();
 
 
-        DefaultCustomerService service = new DefaultCustomerService(stubRepository);
+        CustomerService service = new DefaultCustomerService(stubRepository);
 
         List<Customer> customers = service.getAllCustomers();
 

@@ -5,7 +5,7 @@ import org.example.repository.CustomerRepository;
 
 import java.util.List;
 
-public class DefaultCustomerService {
+public class DefaultCustomerService implements CustomerService {
 
     private CustomerRepository repository ;
 
