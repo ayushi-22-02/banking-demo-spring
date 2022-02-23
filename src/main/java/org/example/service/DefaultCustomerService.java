@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
+@Service("customerService")
 public class DefaultCustomerService implements CustomerService {
 
     public void setCustomerRepository(CustomerRepository repository) {
         this.repository = repository;
     }
-
+@Autowired
     private CustomerRepository repository ;
 
     public DefaultCustomerService() {
