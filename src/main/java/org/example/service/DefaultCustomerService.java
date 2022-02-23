@@ -12,12 +12,14 @@ import java.util.List;
 
 public class DefaultCustomerService implements CustomerService {
 
-
+    public void setCustomerRepository(CustomerRepository repository) {
+        this.repository = repository;
+    }
 
     private CustomerRepository repository ;
 
-    public DefaultCustomerService(CustomerRepository repository) {
-        this.repository=repository;
+    public DefaultCustomerService() {
+
     }
 
     public List<Customer> getAllCustomers() {
