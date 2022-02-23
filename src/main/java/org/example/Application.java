@@ -14,12 +14,7 @@ public class Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class);
-//        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 //
-//        CustomerService service = context.getBean("customerService", CustomerService.class);
-//
-//        List<Customer> customers = service.getAllCustomers();
-//        customers.forEach(System.out::println);
     }
 
 }

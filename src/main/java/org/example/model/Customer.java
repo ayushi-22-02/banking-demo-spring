@@ -1,15 +1,19 @@
 package org.example.model;
 
+import javax.persistence.*;
+
+@Entity(name="customers")
 public class Customer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="customer_id")
     private String id;
     private String name;
     private String city;
 
-    public Customer(String id, String name, String city) {
+    public Customer() {
 
-        this.id = id;
-        this.name = name;
-        this.city = city;
+
     }
 
     public Customer(String cu) {
