@@ -12,7 +12,7 @@ import java.util.List;
 
 public class DefaultCustomerService implements CustomerService {
 
-    public void setRepository(CustomerRepository repository) {
+    public void setCustomerRepository(CustomerRepository repository) {
         this.repository = repository;
     }
 
