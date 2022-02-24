@@ -30,8 +30,16 @@ public class DefaultCustomerService implements CustomerService {
     @Override
     public Customer getCustomer(Long id) {
         Optional<Customer> customerbyId = repository.findById(id);
-        return customerbyId.orElseGet(Customer::new);
+//    if(customerbyId.isPresent())
+        return customerbyId.get();
+//    else
+//      return new Customer();
     }
+    public void deleteCustomer(Long id)
+    {
+        repository.deleteById(id);
+    }
+
 
 
 
