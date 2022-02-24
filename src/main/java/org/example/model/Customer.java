@@ -11,9 +11,11 @@ public class Customer {
     private String name;
     private String city;
 
+    private  String date_of_birth;
+    private String zipcode;
+    private int status;
+
     public Customer() {
-
-
     }
 
     public Customer(String cu) {
@@ -43,12 +45,39 @@ public class Customer {
         this.city = city;
     }
 
+    public String getDate_of_birth() {
+        return date_of_birth;
+    }
+
+    public void setDate_of_birth(String date_of_birth) {
+        this.date_of_birth = date_of_birth;
+    }
+
+    public String getZipcode() {
+        return zipcode;
+    }
+
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", city='" + city + '\'' +
+                ", date_of_birth='" + date_of_birth + '\'' +
+                ", zipcode='" + zipcode + '\'' +
+                ", status=" + status +
                 '}';
     }
 }
