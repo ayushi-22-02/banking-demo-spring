@@ -4,6 +4,8 @@ import org.example.model.Customer;
 import org.example.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
@@ -28,12 +30,13 @@ public class DefaultCustomerService implements CustomerService {
     }
 
     @Override
-    public Customer getCustomer(Long id) {
-        Optional<Customer> customerbyId = repository.findById(id);
-//    if(customerbyId.isPresent())
-        return customerbyId.get();
-//    else
-//      return new Customer();
+    public ResponseEntity<Customer> getCustomer(Long id) {
+        Optional<Customer> optionalCustomer= repository.findById(id);
+   if(optionalCustomer.isPresent()) {
+       return new ResponseEntity<Customer>(optionalCustomer.get(), HttpStatus.OK);
+   }
+
+       return  new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
     public void deleteCustomer(Long id)
     {
