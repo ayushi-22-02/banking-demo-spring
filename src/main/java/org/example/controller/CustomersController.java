@@ -28,4 +28,14 @@ public class CustomersController {
         customerService.deleteCustomer(id);
     }
 
+@PostMapping
+    public Customer saveCustomer(@RequestBody Customer customer)
+{
+    return customerService.saveCustomer(customer);
+}
+    @RequestMapping(value = "{id}", method = RequestMethod.PUT)
+    public Customer updateCustomer(@PathVariable Long id,
+                                   @RequestBody Customer customer) {
+        return customerService.updateCustomer(id, customer);
+    }
 }
